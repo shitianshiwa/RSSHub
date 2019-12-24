@@ -88,7 +88,7 @@ pageClass: routes
 
 ## DLsite
 
-### 当前日期发售产品
+### 当前日期发售的新产品
 
 <Route author="cssxsh" example="/dlsite/new/home" path="/dlsite/new/:type" :paramsDesc="['类型，如下表']">
 
@@ -96,6 +96,11 @@ pageClass: routes
 | ---- | ----- | ---- | --------- | --------- | ---------- | ----- | --- |
 | home | comic | soft | maniax    | books     | pro        | girls | bl  |
 
+</Route>
+
+### 产品打折信息
+
+<Route author="cssxsh" example="/dlsite/campaign/home" path="/dlsite/campaign/:type/:free?" :paramsDesc="['类型，同上表', '只看免费，任意值开启，为空关闭']">
 </Route>
 
 ## ebb.io
@@ -144,11 +149,11 @@ pageClass: routes
 
 ### vol
 
-<Route author="CoderTonyChan" example="/vol/finsh" path="/vol/:mode?" :paramsDesc="['模式']">
+<Route author="CoderTonyChan" example="/vol/finish" path="/vol/:mode?" :paramsDesc="['模式']">
 
-| 连载   | 完结  |
-| ------ | ----- |
-| serial | finsh |
+| 连载   | 完结   |
+| ------ | ------ |
+| serial | finish |
 
 </Route>
 
@@ -159,6 +164,10 @@ pageClass: routes
 <Route author="machsix" path="/webtoons/:lang/:category/:name/:id" example="/webtoons/zh-hant/drama/gongzhuweimian/894" :paramsDesc="['语言','类别','名称','ID']"/>
 
 比如漫画公主彻夜未眠的网址为https://www.webtoons.com/zh-hant/drama/gongzhuweimian/list?title_no=894, 则`lang=zh-hant`,`category=drama`,`name=gongzhucheyeweimian`,`id=894`.
+
+### [Naver](https://comic.naver.com)
+
+<Route author="zfanta" example="/webtoons/naver/651673" path="/webtoons/naver/:titleId" :paramsDesc="['titleId']" />
 
 ## 嘀哩嘀哩 - dilidili
 
@@ -223,6 +232,12 @@ pageClass: routes
 ### 漫画 DB
 
 <Route author="junfengP" path="/manhuadb/:id" example="/manhuadb/comics/1711" :paramsDesc="['漫画ID']"/>
+
+## 三界异次元
+
+### 三界异次元
+
+<Route author="luyuhuang" example="/3ycy/home" path="/3ycy/home" radar="1"/>
 
 ## 鼠绘漫画
 

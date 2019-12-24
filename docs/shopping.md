@@ -4,6 +4,12 @@ pageClass: routes
 
 # 购物
 
+## Alter 中国
+
+### 新闻
+
+<Route author="luyuhuang" example="/alter-cn/news" path="/alter-cn/news"/>
+
 ## Westore
 
 ### 新品
@@ -147,22 +153,6 @@ pageClass: routes
 
 </Route>
 
-## 甩甩尾巴
-
-### 分类
-
-<Route author="xyqfer" example="/dgtle/trade/111" path="/dgtle/trade/:typeId?" :paramsDesc="['分类 id，默认为全部']">
-
-| 全部 | 电脑 | 手机 | 平板 | 相机 | 影音 | 外设 | 生活 | 公告 |
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| 0    | 111  | 109  | 110  | 113  | 114  | 115  | 112  | 116  |
-
-</Route>
-
-### 关键词
-
-<Route author="gaoliang" example="/dgtle/trade/search/ipad" path="/dgtle/trade/search/:keyword" :paramsDesc="['搜索关键词']"/>
-
 ## 淘宝众筹
 
 ### 众筹项目
@@ -200,6 +190,16 @@ pageClass: routes
 ### 小米有品每日上新
 
 <Route author="xyqfer" example="/mi/youpin/new" path="/mi/youpin/new"/>
+
+## 宜家 IKEA
+
+### 宜家 IKEA（英国）- 商品上新
+
+<RouteEn author="HenryQW" example="/ikea/uk/new" path="/ikea/uk/new"/>
+
+### 宜家 IKEA（英国）- 促销
+
+<RouteEn author="HenryQW" example="/ikea/uk/offer" path="/ikea/uk/offer"/>
 
 ## 有赞
 

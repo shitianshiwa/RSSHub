@@ -106,13 +106,11 @@ pageClass: routes
 
 ### 信息门户
 
-<Route author="RicardoMing" example="/bupt/portal" path="/bupt/portal" />
+<Route author="RicardoMing wzekin" example="/bupt/portal" path="/bupt/portal" />
 
-::: warning 注意
-信息门户的通知需要通过统一身份认证后才能获取，因此需要在校园网或校园 VPN 环境下自建。
+### 校园新闻
 
-设置环境变量: `BUPT_USERNAME` 用户名为学号， `BUPT_PASSWORD` 统一身份认证的密码。
-:::
+<Route author="wzekin" example="/bupt/news" path="/bupt/news" />
 
 ## 常州大学
 
@@ -267,11 +265,13 @@ xskb1 对应 http://www.auto.uestc.edu.cn/index/xskb1.htm
 
 ### 东南大学计算机技术与工程学院
 
-<Route author="LogicJake" example="/seu/cse/xyxw" path="/universities/seu/cse/:type?" :paramsDesc="['分类名(默认为xyxw)']"/>
+<Route author="LogicJake" example="/seu/cse/xyxw" path="/universities/seu/cse/:type?" :paramsDesc="['分类名(默认为xyxw)']">
 
 | 学院新闻 | 通知公告 | 教务信息 | 就业信息 | 学工事务 |
 | -------- | -------- | -------- | -------- | -------- |
 | xyxw     | tzgg     | jwxx     | jyxx     | xgsw     |
+
+</Route>
 
 ## 广东工业大学
 
@@ -456,6 +456,12 @@ category 列表：
 
 </Route>
 
+## 井冈山大学
+
+### 教务处通知
+
+<Route author="butten42" example="/jgsu/jwc" path="/universities/jgsu/jwc" />
+
 ## 昆明理工大学
 
 ### 教务处
@@ -530,29 +536,33 @@ category 列表：
 
 ### 教务通知
 
-<Route author="arcosx" example="/nuaa/jwc/all" path="/universities/nuaa/jwc/:type" :paramsDesc="['分类名']">
+<Route author="arcosx Seiry" example="/nuaa/jwc/default" path="/universities/nuaa/jwc/:type" :paramsDesc="['分类名']">
 
-| 全部 | 教学服务 | 教学建设 | 学生培养 | 教学资源 |
-| ---- | -------- | -------- | -------- | -------- |
-| all  | jxfw     | jxjs     | xspy     | jxzy     |
+| 教学服务      | 教学建设 | 学生培养 | 教学资源 |
+| ------------- | -------- | -------- | -------- |
+| jxfw(default) | jxjs     | xspy     | jxzy     |
 
 </Route>
 
 ### 计算机科学与技术学院
 
-<Route author="LogicJake" example="/nuaa/cs/kydt" path="/universities/nuaa/cs/:type?" :paramsDesc="['分类名']"/>
+<Route author="LogicJake Seiry" example="/nuaa/cs/kydt" path="/universities/nuaa/cs/:type?" :paramsDesc="['分类名']"/>
 
 | 通知公告 | 新闻动态 | 科研动态 | 教学动态 | 学生工作 | 招生信息 | 就业信息 |
 | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
 | tzgg     | xwdt     | kydt     | jxdt     | xsgz     | zsxx     | jyxx     |
 
+</Route>
+
 ### 研究生院
 
-<Route author="junfengP" example="/nuaa/yjsy/latest" path="/universities/nuaa/yjsy/:type?" :paramsDesc="['分类名']"/>
+<Route author="junfengP Seiry" example="/nuaa/yjsy/latest" path="/universities/nuaa/yjsy/:type?" :paramsDesc="['分类名']"/>
 
 | 最近动态 | 研院新闻 | 上级文件 | 管理文件 | 信息服务 |
 | -------- | -------- | -------- | -------- | -------- |
 | latest   | yyxw     | sjwj     | glwj     | xxfw     |
+
+</Route>
 
 ## 南京理工大学
 
@@ -1037,6 +1047,28 @@ https://rsshub.app/**nuist**/`bulletin` 或 https://rsshub.app/**nuist**/`bullet
 
 </Route>
 
+## 郑州大学
+
+### 郑州大学新闻网
+
+<Route author="niayyy-S" example="/zzu/news/zh" path="zzu/news/:type?"  :paramsDesc="['可选, 默认为 `zh`']">
+
+| 参数名称 | 综合新闻 | 学术动态 | 媒体郑大 | 院系风采 | 教学科研 | 学生信息 | 外事信息 |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| 参数     | zh       | xs       | mt       | yx       | ky       | stu      | ws       |
+
+</Route>
+
+### 软件学院
+
+<Route author="niayyy-S" example="/zzu/soft/news/xyxw" path="zzu/soft/news/:type?"  :paramsDesc="['可选, 默认为 `xyxw`']">
+
+| 参数名称 | 学院新闻 | 学院公告 | 学生工作 |
+| -------- | -------- | -------- | -------- |
+| 参数     | xyxw     | xygg     | xsgz     |
+
+</Route>
+
 ## 中国传媒大学
 
 ### 中国传媒大学研究生招生网
@@ -1054,6 +1086,28 @@ https://rsshub.app/**nuist**/`bulletin` 或 https://rsshub.app/**nuist**/`bullet
 ### 上海微系统与信息技术研究所学术活动
 
 <Route author="HenryQW" example="/cas/sim/academic" path="/universities/cas/sim/academic"/>
+
+## 中国石油大学（华东）
+
+### 主页
+
+<Route author="Veagau" example="/upc/main" path="/upc/main/:type" :paramsDesc="['分类, 见下表']">
+
+| 通知公告 | 学术动态 |
+| -------- | -------- |
+| notice   | scholar  |
+
+</Route>
+
+### 计算机科学与技术学院
+
+<Route author="Veagau" example="/upc/jsj" path="/upc/jsj/:type" :paramsDesc="['分类, 见下表']">
+
+| 学院新闻 | 学术关注 | 学工动态 | 通知公告 |
+| -------- | -------- | -------- | -------- |
+| news     | scholar  | states   | notice   |
+
+</Route>
 
 ## 中国药科大学
 

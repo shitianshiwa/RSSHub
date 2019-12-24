@@ -18,10 +18,10 @@ pageClass: routes
 
 ### 9To5 分站
 
-<Route author="HenryQW" example="/9to5/mac" path="/9to5/:type" :paramsDesc="['分站名字']">
+<Route author="HenryQW" example="/9to5/mac/aapl" path="/9to5/:subsite/:tag?" :paramsDesc="['分站名字','标签，可在文章标签 URL 中找到']">
 
 支持分站：
-| Mac | Google | Toys |
+| 9To5Mac | 9To5Google | 9To5Toys |
 | --- | ------ | ---- |
 | Mac | Google | Toys |
 
@@ -29,7 +29,7 @@ pageClass: routes
 
 ## AEON
 
-<Route author="emdoe" example="/aeon/ideas" path="/aeon/:category" :paramsDesc="['类别']"></Route>
+<Route author="emdoe" example="/aeon/ideas" path="/aeon/:category" :paramsDesc="['类别']">
 
 支持以文体分类：
 | Ideas | Essays | Videos |
@@ -40,6 +40,8 @@ pageClass: routes
 | Culture | Philosophy | Psychology | Society | Science |
 | ------- | ---------- | ---------- | ------- | ------- |
 | culture | philosophy | psychology | society | science |
+
+</Route>
 
 ## BOF
 
@@ -97,6 +99,18 @@ pageClass: routes
 
 <Route author="brilon" example="/infoq/topic/1" path="/infoq/topic/:id" :paramsDesc="['话题id，可在[InfoQ全部话题](https://www.infoq.cn/topics)页面找到URL里的话题id']" />
 
+## IT 之家
+
+### 分类资讯
+
+<Route author="luyuhuang" example="/ithome/it" path="/ithome/:caty" :paramsDesc="['类别']" radar="1">
+
+| it      | soft     | win10      | iphone      | ipad      | android      | digi     | next     |
+| ------- | -------- | ---------- | ----------- | --------- | ------------ | -------- | -------- |
+| IT 资讯 | 软件之家 | win10 之家 | iphone 之家 | ipad 之家 | android 之家 | 数码之家 | 智能时代 |
+
+</Route>
+
 ## IT 桔子
 
 ### 投融资事件
@@ -131,6 +145,18 @@ pageClass: routes
 
 <Route author="emdoe" example="/nautilus/topic/Art" path="/nautilus/topic/:tid" :paramsDesc="['话题 id, 可在页面上方 TOPICS 栏目处找到']"/>
 
+## PMCAFF
+
+### 今日推荐/精选
+
+<Route author="Jeason0228" example="/pmcaff/list/2" path="/pmcaff/list/:typeid" :paramsDesc="['分类 id,1=今天推荐,2=精选']"/>
+
+## Quanta Magazine
+
+### 全部
+
+<Route author="emdoe" example="/quantamagazine/archive" path="/quantamagazine/archive"/>
+
 ## Readhub
 
 ### 分类
@@ -142,6 +168,16 @@ pageClass: routes
 | topic    | news     | technews   | blockchain | daily    |
 
 </Route>
+
+## Simons Foundation
+
+### 文章
+
+<Route author="emdoe" example="/simonsfoundation/articles" path="/simonsfoundation/articles"/>
+
+### 推荐
+
+<Route author="emdoe" example="/simonsfoundation/recommend" path="/simonsfoundation/recommend"/>
 
 ## sixthtone
 
@@ -200,6 +236,20 @@ pageClass: routes
 
 <Route author="hillerliao" example="/8btc/news/flash" path="/8btc/news/flash"/>
 
+## 坂道系列官网新闻
+
+### 乃木坂 46
+
+<Route author="crispgm" example="/nogizaka46/news" path="/nogizaka46/news" />
+
+### 欅坂 46
+
+<Route author="crispgm" example="/keyakizaka46/news" path="/keyakizaka46/news" />
+
+### 日向坂 46
+
+<Route author="crispgm" example="/hinatazaka46/news" path="/hinatazaka46/news" />
+
 ## 币世界
 
 ### 快讯
@@ -227,7 +277,6 @@ pageClass: routes
 ::: tip 提示
 
 -   可以通过头条新闻+参数过滤的形式获得早报、专题等内容。
--   不支持 gif 集锦播放
 
 :::
 
@@ -325,7 +374,7 @@ pageClass: routes
 
 ### 标签，栏目，分类
 
-<Route author="WenhuWee emdoe SivaGao HenryQW" example="/qdaily/column/59" path="/qdaily/:type/:id" :paramsDesc="['类型，见下表', '对应 id，可在 URL 找到']">
+<Route author="WenhuWee emdoe SivaGao HenryQW" example="/qdaily/column/59" path="/qdaily/:type/:id" :paramsDesc="['类型，见下表', '对应 id，可在 URL 找到']" radar="1">
 
 | 标签 | 栏目   | 分类       |
 | ---- | ------ | ---------- |
@@ -354,6 +403,10 @@ pageClass: routes
 <Route author="ciaranchen" example="/houxu/events" path="/houxu/events"/>
 
 ## 虎嗅
+
+### 首页资讯
+
+<Route author="HenryQW" example="/huxiu/article" path="/huxiu/article" />
 
 ### 标签
 
@@ -487,12 +540,6 @@ pageClass: routes
 
 <Route author="howel52" example="/jpmorganchase" path="/jpmorganchase"/>
 
-## 乃木坂 46 官网
-
-### 新闻
-
-<Route author="crispgm" example="/nogizaka46/news" path="/nogizaka46/news" />
-
 ## 派代
 
 ### 首页
@@ -570,6 +617,10 @@ pageClass: routes
 ### 热门文章
 
 <Route author="WenryXu" example="/woshipm/popular" path="/woshipm/popular"/>
+
+### 天天问
+
+<Route author="WenryXu" example="/woshipm/wen" path="/woshipm/wen"/>
 
 ### 用户收藏
 
