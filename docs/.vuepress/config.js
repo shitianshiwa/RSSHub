@@ -1,4 +1,4 @@
-const pinyin = require('pinyin');
+const { pinyin, PINYIN_STYLE } = require('@napi-rs/pinyin');
 const { slugify: _slugify } = require('@vuepress/shared-utils');
 
 module.exports = {
@@ -39,10 +39,10 @@ module.exports = {
         },
         extendMarkdown: (md) => {
             md.use(require('../.format/md/hierarchySlug'), {
-                slugify: function (s) {
+                slugify(s) {
                     return _slugify(
                         pinyin(s, {
-                            style: pinyin.STYLE_NORMAL,
+                            style: PINYIN_STYLE.Plain,
                             heteronym: true,
                             segment: true,
                         })
@@ -67,6 +67,7 @@ module.exports = {
         ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
         ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#ff8549' }],
     ],
+    theme: 'vuepress-theme-rsshub',
     themeConfig: {
         repo: 'DIYgod/RSSHub',
         editLinks: true,
@@ -86,24 +87,7 @@ module.exports = {
                 label: '简体中文',
                 editLinkText: '在 GitHub 上编辑此页',
                 lastUpdated: '上次更新',
-                nav: [
-                    {
-                        text: '指南',
-                        link: '/',
-                    },
-                    {
-                        text: '参与我们',
-                        link: '/joinus/',
-                    },
-                    {
-                        text: '部署',
-                        link: '/install/',
-                    },
-                    {
-                        text: '支持 RSSHub',
-                        link: '/support/',
-                    },
-                ],
+                nav: require('./nav/zh'),
                 sidebar: {
                     '/': [
                         {
@@ -150,24 +134,7 @@ module.exports = {
                 label: 'English',
                 editLinkText: 'Edit this page on GitHub',
                 lastUpdated: 'Last Updated',
-                nav: [
-                    {
-                        text: 'Guide',
-                        link: '/en/',
-                    },
-                    {
-                        text: 'Join us',
-                        link: '/en/joinus/',
-                    },
-                    {
-                        text: 'Deploy',
-                        link: '/en/install/',
-                    },
-                    {
-                        text: 'Support RSSHub',
-                        link: '/en/support/',
-                    },
-                ],
+                nav: require('./nav/en'),
                 sidebar: {
                     '/en/': [
                         {
